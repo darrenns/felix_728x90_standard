@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>728x90</title>
+	<meta name="ad.size" content="width=728, height=90" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="greensock.js"></script>
+	<script type="text/javascript" src="animation.js"></script>
+</head>
+
+<body>
+	<div id="banner">
+		<div id="BackgroundImage"></div>
+
+		<div id="frameOne">
+			<div id="textOne"></div>
+			<div id="catAnimationOne"></div>
+			<div id="catAnimationOneB"></div>
+			<div id="productAnimationOne"></div>
+			<div id="productAnimationOneB"></div>
+		</div>
+
+		<div id="frameTwo">
+			<div id="textTwo"></div>
+		</div>
+
+		<div id="endFrame">
+			<div id="endFrameBackground"></div>
+			<div id="catAnimationTwo"></div>
+			<div id="catAnimationThree"></div>
+		</div>
+
+		<img id="cta" src="assets/cta.png" alt="">
+		<div id="redBar"></div>
+		<div id="bgexit"></div>
+	</div>
+
+	<script>
+		var cta = document.getElementById("cta");
+		if (clickTag === undefined) {
+			var clickTag = "https://www.purina.co.uk/cat/felix/products?gclid=EAIaIQobChMImKWmxKis3wIVCOJ3Ch0kRA4wEAAYASAAEgIUHvD_BwE";
+		}
+		var clickArea = document.getElementById("bgexit");
+		clickArea.addEventListener("click", clickBtn, false);
+		clickArea.addEventListener("mouseover", mouseoverBtn, false);
+		clickArea.addEventListener("mouseleave", mouseleaveBtn, false);
+		var cta = document.getElementById("cta");
+
+		function clickBtn() {
+			window.open(window.clickTag);
+		}
+
+		function mouseoverBtn() {
+			TweenLite.to(cta, 0.5, {
+				scale: 0.9,
+				ease: Power1.easeOut
+			})
+		}
+
+		function mouseleaveBtn() {
+			TweenLite.to(cta, 0.5, {
+				scale: 1,
+				ease: Power1.easeOut
+			})
+		}
+	</script>
+
+</body>
+
+</html>
